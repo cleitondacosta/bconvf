@@ -54,11 +54,14 @@ the `%` and the `b/o/d/h/H` (e.g. %-10d, %53b). Let's call this number N.
 N changes the behavior of the corresponding operation. If negative, leading
 blank spaces is concatenated on the converted number in output. The number of
 blank spaces depends on the amount of digits of the converted number, 
-so it can be added from 0 to N leading blank spaces.
+so it can be added from 0 to N leading blank spaces.  If positive, it's the
+same idea, except that the concatenation happens on the right side of the
+converted number.
 
-If positive, it's the same idea, except that the concatenation happens on the
-right side of the converted number. See the examples below for a better
-understanding.
+Also, it's possible to add leading zeros instead of spaces. To make it, N must
+be a natural number starting with 0.
+
+See the examples below for a better understanding.
 
 ### Examples
 
@@ -71,8 +74,14 @@ understanding.
 ```
 ./bconvf "binary\toctal\tdecimal\thex\n%b\t%o\t%d\t%H\n" -b 11010
 
-binary	octal	decimal	hex
-11010	32	    26	    1A
+binary	octal   decimal hex
+11010   32      26      1A
+```
+
+```
+./bconvf -h fF "%04d %016b\n"
+
+0255 0000000011111111
 ```
 
 ```
