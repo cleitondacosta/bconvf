@@ -24,7 +24,6 @@ char get_sequence(const char *format, const size_t formatSize, size_t *offset)
         case 'r': return '\r';
         case 't': return '\t';
         case 'v': return '\v';
-        case '\\': return '\\';
         default:
             *offset -= 1;
             return format[*offset];
