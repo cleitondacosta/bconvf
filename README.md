@@ -9,7 +9,7 @@ bconvf is a linux command to effect base conversion with formatted output.
 ```
 git clone https://github.com/cleitondacosta/bconvf.git
 cd bconvf
-gcc main.c -o bconvf
+gcc main.c -lm -o bconvf
 ```
 
 With bconvf compiled, you may want to move it to some directory that is in
@@ -21,15 +21,15 @@ your PATH variable.
 bconvf (-b|-o|-d|-h NUMBER) FORMAT
 ```
 
-Where NUMBER is the number to be converted.
-Also, you need to tell the NUMBER's base:
+The `-b|-o|-d|-h` option tells the base of the NUMBER argument. You need to
+pass one of these options with its argument (NUMBER).
 
-| Option | Base                     |
-| ------ | ------------------------ |
-| -b     | Binary                   |
-| -o     | Octal                    |
-| -d     | Decimal                  |
-| -h     | Hexadecimal              |
+| Option            | Base                     |
+| ----------------- | ------------------------ |
+| -b, --binary      | Binary                   |
+| -o, --octal       | Octal                    |
+| -d, --decimal     | Decimal                  |
+| -h, --hexadecimal | Hexadecimal              |
 
 FORMAT is the format string, which defines how the output will look.
 These are the special characters sequences:
