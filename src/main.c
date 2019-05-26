@@ -97,7 +97,7 @@ int main(int argc, char **argv)
     }
 
     exit_if_missing_format_argument(argc, optind);
-    exit_if_numbers_given_is_different_than_one(numbersGiven);
+    exit_if_numbers_given_is_different_from_one(numbersGiven);
     exit_if_invalid_number(number);
     exit_if_number_too_long(number);
 

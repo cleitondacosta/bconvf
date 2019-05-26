@@ -21,16 +21,17 @@ void exit_if_missing_format_argument(int argc, int optind)
 {
     if((argc - optind) != 1)
     {
-        printf("Usage: bconvf format (-b|-o|-d|-h|-H) number\n");
+        printf("Usage: bconvf (-b|-o|-d|-h NUMBER) FORMAT\n");
         exit(EXIT_FAILURE);
     }
 }
 
-void exit_if_numbers_given_is_different_than_one(int numbersGiven)
+void exit_if_numbers_given_is_different_from_one(int numbersGiven)
 {
     if(numbersGiven != 1)
     {
         fprintf(stderr, "You need to pass one number.\n");
+        printf("Usage: bconvf (-b|-o|-d|-h NUMBER) FORMAT\n");
         exit(EXIT_FAILURE);
     }
 }
